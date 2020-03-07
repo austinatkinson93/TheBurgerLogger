@@ -1,0 +1,56 @@
+<div class="container justify-content-center">
+    <div class="row">
+
+        <img src="assets/img/burger2.svg" alt="burger image">
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-6 burgers">
+            <div class=" title">
+                <h2>Eat A Burger!</h2>
+            </div>
+            <div class=" burger-list">
+                <ol>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers devoured=false}}
+                    {{/unless}}
+                    {{/each}}
+                </ol>
+            </div>
+        </div>
+
+        <div class=" col-6 devoured">
+            <div class="devoured-list ">
+                <h3>Devoured Burgers!</h3>
+
+                <ol>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers devoured=true}}
+                    {{/if}}
+                    {{/each}}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <form class="add-burger-form">
+
+            <div class="form-group">
+                <label for="burg">Add a new burger to your list!</label>
+                <input class="form-control" name="burger-name" id="burg" rows="3">
+            </div>
+
+            <button type="submit" class="btn btn-success" id="submit">Submit</button>
+
+        </form>
+    </div>
+
+
+
+
+</div>
